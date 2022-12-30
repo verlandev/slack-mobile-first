@@ -1,0 +1,144 @@
+@mixin flex($direction,$content,$align,$wraper){
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
+    flex-wrap: $wraper;
+}
+
+$slackColorPrincipal:#531554;
+$slackColorSecondary:#f4ede3;
+
+*{
+    box-sizing: border-box;
+}
+
+body, html, .root{
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans';
+}
+
+// HEADER Section
+
+.header{
+    width: 100%;
+    background-color: $slackColorPrincipal;
+    display: flex;
+    @include flex(column,center,center,nowrap);
+    padding: 20px;
+    border: 5px solid red;
+
+}
+
+.nav{
+    width: 100%;
+    display: flex;
+    @include flex(row, space-between,center,nowrap);
+    
+    &__img{
+        
+    }
+    
+    &__a{
+        text-decoration: none;
+        color: #fff;
+    }
+    
+}
+
+.aboveTheFold{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+
+    &__h1{
+        font-size: 50px;
+    }
+
+    &__accentColor{
+        color: #e5b43a;
+    }
+
+    &__p{
+
+    
+
+    }
+
+}
+
+.header__signUp{
+    display: block;
+    width: 100%;
+    
+    
+    &--a{
+        display: block;
+        width: 100%;
+        border: solid 1px green;
+        text-decoration: none;
+        color:#fff;
+    }
+}
+
+.header__video{
+    width:100%;
+
+    &--demo{
+        width: 400px;
+    }
+}
+
+
+
+// MAIN Section
+
+
+.main{
+    width: 100%;
+    height: 2000px;
+    background-color: $slackColorSecondary;
+    border: 2px solid green ;
+
+}
+
+
+.trust{
+    border: solid 2px orange;
+    height: 1000px;
+    @include flex(column,center ,center ,nowrap )
+    
+
+}
+
+.companies{
+    border: solid 2px blue;
+   
+
+}
+
+.companies__h2{
+    text-align: center;
+}
+
+.companies__logos{
+    @include flex(row,space-around,center,wrap);
+    border: solid 10px #531554;
+
+    &--img {
+        width: 100px;
+        border: solid 2px green;
+    }
+
+}
+
+
+
+
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: blue;
+}
+
