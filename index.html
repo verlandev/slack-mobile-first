@@ -5,43 +5,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="./styles.css" rel="stylesheet" />
+    <script src="index.js" defer></script>
   </head>
   <body>
     
     <div class="root">
       
       <header class="header">
-        <div class="header__nav nav">
-          <span>
-            <img src="#" alt="logo" loading="lazy" title="slack" class="nav__img">
-          </span>
-          <span>
-            <a href="" class="nav__a">Menú</a></span>
-        </div>
         
-        <div class="header__aboveTheFold aboveTheFold">
-          <h1 class="aboveTheFold__h1">Un buen trabajo en equipo comienza con una<span class="aboveTheFold__accentColor">sede digital</span>
-          </h1>
-          <p class="aboveTheFold__p">Reunir a todos tus compañeros, herramientas y comunicación en un
-            mismo lugar te permitirá trabajar de manera más rápida y eficiente que nunca.</p>
-        </div>
+        <nav class="nav">
+          <div class="navbar">
+            <div class="nav__logo">
+              <img src="./assets/Slack_icon_2019.svg.png" alt="" loading="lazy" title="logo" class="nav__logo--img">
+              <h5 class="nav__logo--h5">Slack</h5>
+            </div>
 
+            <button class="navbar__button">
+              <svg class="navbar__button--svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+          </div>
 
-        <div class="header__signUp">
-          <a href="#" class="header__signUp--a header__signUp--aEmail"
-            >Registrarse con correo</a
-          >
-          <a href="#" class="header__signUp--a header__signUp--aGoogle"
-            >Registrarse con Google</a
-          >
-        </div>
-        <div class="header__video">
-          <video
-            src="https://a.slack-edge.com/9436a9f/marketing/img/homepage/e2e-prospects/animations/webm/hero-product-ui.es-ES.webm"
-            class="header__video--demo"
-            autoplay="true"
-            loop="true"
-          ></video>
+          <nav class="nav__elements">
+            
+            <ul class="nav__elements--ul">
+              <li class="nav__elements--li"><a href="#" class="nav__elements--a">Producto</a></li>
+              <li class="nav__elements--li"><a href="#" class="nav__elements--a">Enterprise</a></li>
+              <li class="nav__elements--li"><a href="#" class="nav__elements--a">Recursos</a></li>
+              <li class="nav__elements--li"><a href="#" class="nav__elements--a">Precios</a></li>
+            </ul>
+
+            <div class="nav__signUpLinks">
+              <a href="" class="nav__signUpLinks--a">Conectarse</a>
+              <a href="" class="nav__signUpLinks--a nav__signUpLinks--aNormal">Hablar con el equipo de ventas</a>
+              <a href="" class="nav__signUpLinks--a nav__signUpLinks--aSlack">Probarlo gratis</a>
+            </div>
+
+          </nav>
+          
+        </nav>
+        
+        <div class="header__inFront">
+          <div class="header__aboveTheFold aboveTheFold">
+            <h1 class="aboveTheFold__h1">Un buen trabajo en equipo comienza con una <span class="aboveTheFold__accentColor">sede digital</span>
+            </h1>
+            <p class="aboveTheFold__p">Reunir a todos tus compañeros, herramientas y comunicación en un
+              mismo lugar te permitirá trabajar de manera más rápida y eficiente que nunca.</p>
+              <div class="header__signUp">
+                <a href="#" class="header__signUp--a header__signUp--aEmail"
+                >Registrarse con correo</a
+                >
+                <a href="#" class="header__signUp--a header__signUp--aGoogle"
+                >Registrarse con Google</a>
+              </div>
+          </div>
+          <div class="header__video">
+            <video
+              src="https://a.slack-edge.com/9436a9f/marketing/img/homepage/e2e-prospects/animations/webm/hero-product-ui.es-ES.webm"
+              class="header__video--demo"
+              autoplay="true"
+              loop="true"
+            ></video>
+          </div>
         </div>
       </header>
 
@@ -97,6 +123,7 @@
           </div>
 
           <div class="feature">
+            
             <div class="feature__dynamism">
               <img
                 src="./assets/reune-tu-equipo.png"
@@ -248,33 +275,88 @@
             </div>
           </div>
         </section>
+
         <section class="addFeatures">
           <h2 class="addFeatures__h2">
             Explora con más profundidad una nueva forma de trabajar
           </h2>
-          <a href="" class="addFeatures__a">
-            <div class="addFeatures__caption">
-              <!--Este se va a repetir 4 veces-->
-              <img
-                src="./assets/img-promo-01.jpg"
-                alt=""
-                loading="lazy"
-                title="addFeatures"
-                class="addFeatures__caption--img"
-              />
-              <p class="addFeatures__caption--p">Funciones</p>
-              <h3 class="addFeatures__caption--h3">
-                Echa un vistazo a todo lo que puede hacer la plataforma
-              </h3>
-              <p class="addFeatures__caption--link">Examina las funciones</p>
-              <!-- Cuidado que hay una flecha :after de este enlace -->
-            </div>
-          </a>
+
+          <div class="addFeatures__container"> <!--Contenedor grande con todo-->
+
+            <a href="" class="addFeatures__a">
+              <div class="addFeatures__caption">
+                <img
+                  src="./assets/img-promo-01.jpg"
+                  alt=""
+                  loading="lazy"
+                  title="addFeatures"
+                  class="addFeatures__caption--img"
+                />
+                <p class="addFeatures__caption--p">Funciones</p>
+                <h3 class="addFeatures__caption--h3">
+                  Echa un vistazo a todo lo que puede hacer la plataforma
+                </h3>
+                <p class="addFeatures__caption--link">Examina las funciones</p>
+                <!-- Cuidado que hay una flecha :after de este enlace -->
+              </div>
+            </a>
+            <a href="" class="addFeatures__a">
+              <div class="addFeatures__caption">
+                <img
+                  src="./assets/img-promo-02.jpg"
+                  alt=""
+                  loading="lazy"
+                  title="addFeatures"
+                  class="addFeatures__caption--img"
+                />
+                <p class="addFeatures__caption--p">Casos de clientes</p>
+                <h3 class="addFeatures__caption--h3">
+                  Busca la inspiración en los clientes reales de Slack
+                </h3>
+                <p class="addFeatures__caption--link">Lee las historias</p>
+                <!-- Cuidado que hay una flecha :after de este enlace -->
+              </div>
+            </a>
+            <a href="" class="addFeatures__a">
+              <div class="addFeatures__caption">
+                <img
+                  src="./assets/img-promo-03.jpg"
+                  alt=""
+                  loading="lazy"
+                  title="addFeatures"
+                  class="addFeatures__caption--img"
+                />
+                <p class="addFeatures__caption--p">Soluciones</p>
+                <h3 class="addFeatures__caption--h3">
+                  Descubre todo lo que puede hacer Slack por tu equipo
+                </h3>
+                <p class="addFeatures__caption--link">Explora soluciones</p>
+                <!-- Cuidado que hay una flecha :after de este enlace -->
+              </div>
+            </a>
+            <a href="" class="addFeatures__a">
+              <div class="addFeatures__caption">
+                <img
+                  src="./assets/img-promo-04.jpg"
+                  alt=""
+                  loading="lazy"
+                  title="addFeatures"
+                  class="addFeatures__caption--img"
+                />
+                <p class="addFeatures__caption--p">Cómo</p>
+                <h3 class="addFeatures__caption--h3">
+                  Empieza con buen pie con la introducción a Slack
+                </h3>
+                <p class="addFeatures__caption--link">Descubre cómo hacerlo</p>
+                <!-- Cuidado que hay una flecha :after de este enlace -->
+              </div>
+            </a>
+          </div>
           <div class="addFeatures__carrusel">
-            <span class="addFeatures__carrusel--span span__selected"></span>
-            <span class="addFeatures__carrusel--span span__selected"></span>
-            <span class="addFeatures__carrusel--span span__selected"></span>
-            <span class="addFeatures__carrusel--span span__selected"></span>
+            <span class="addFeatures__carrusel--span"></span>
+            <span class="addFeatures__carrusel--span"></span>
+            <span class="addFeatures__carrusel--span"></span>
+            <span class="addFeatures__carrusel--span"></span>
           </div>
         </section>
 

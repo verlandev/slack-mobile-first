@@ -27,43 +27,301 @@ body, html, .root{
     width: 100%;
     background-color: $slackColor;
     display: flex;
-    @include flex(column,center,center,nowrap);
-    height: 100vh;
+    @include flex(column,space-between,center,nowrap);
+    
+
+}
+
+.header__inFront{
+
+    width: 90%;
 
 }
 
 .nav{
-    width: 100%;
     display: flex;
-    @include flex(row,space-between,center,nowrap);
-    padding-top: 10px;
-    padding-bottom: 20px;
-    
-    
-    &__img{
-        flex: 1;
-        margin-left: 20px;
-        
+    @include flex(row,center,center,nowrap);
+    width: 90%;
+
+    &__logo{
+
+        display: flex;
+        @include flex(row,center ,center ,nowrap );
+        width: 10%;
+
+        &--img{
+
+            width: 40px;
+
+        }
+
+        &--h5{
+            color:#fff;
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+
     }
-    
-    &__a{
-        flex: 1;
-        text-decoration: none;
-        color: #fff;
-        margin-right:20px;
-        
+
+
+    &__elements{
+        width: 75%;
+        display: flex;
+        @include flex(row,space-around,center,nowrap);
+
+        &--ul{
+            display: flex;
+            @include flex(row,flex-start,center,nowrap);
+            gap: 30px;
+            
+        }
+
+        &--li{
+            list-style: none;
+        }
+
+        &--a{
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: 0.3s;
+            text-underline-position: under
+        }
+
+        &--a:hover{
+            text-decoration: underline;
+            transition: 0.3s;
+
+        }
+
+
+
     }
-    
+
+    &__signUpLinks{
+
+        display: flex;
+        @include flex(row,space-between,center,nowrap);
+
+        &--a{
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            text-underline-position: under;
+            padding: 15px;
+
+        }
+
+        &--a:hover{
+            text-decoration: underline;
+            transition: 0.3s;
+
+        }
+
+        &--aNormal{
+            border: solid 1px white;
+            border-radius: 5px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-left: 15px;
+            margin-right:15px ;
+
+        }
+
+        &--aNormal:hover{
+
+            text-decoration: none;
+
+        }
+
+        &--aSlack{
+            background-color: #fff;
+            border:solid 2px white;
+            border-radius: 5px;
+            color: $slackColor;
+            text-transform: uppercase;
+            transition: 0.5s;
+        }
+
+        &--aSlack:hover{
+            text-decoration: none;
+            border:solid 2px $slackColor;
+            transition: 0.5s;
+        }
+
+    }
 }
+
+.navbar__button{
+    display: none;
+}
+
+@media screen and (max-width: 1600px){
+      
+
+    .header{
+        position:relative;
+    }
+
+    .nav{
+        display: flex;
+        width: 100%;
+        @include flex(column,space-between,center,nowrap);
+        background-color: $slackColor;
+        position: absolute;
+        
+        
+
+
+        &__elements{
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s;
+            @include flex(column,flex-start,center,nowrap);
+            width: 100%;
+            background-color: white;
+            
+    
+            &--ul{
+                display:flex;
+                @include flex(column,space-between,flex-start,nowrap );
+                width: 100%;
+            }
+    
+            
+    
+            &--a{
+                color:black
+    
+            }           
+            
+        }
+
+
+
+    .activo{
+        height: 100vh;
+        transition:0.5s;
+        
+    }
+
+        &__signUpLinks{
+            display: flex;
+            width: 100%;
+            @include flex(column,flex-start,flex-start,nowrap);
+
+
+            &--a{
+                color: black;
+                text-align: center;
+                margin-left: 25px;
+                margin-bottom: 50px;
+            }
+
+            &--a:hover{
+                text-decoration:none;
+            }
+
+            &--aNormal{
+                border:solid 2px $slackColor;
+                margin: 0 auto;
+                width: 90%;
+                margin-bottom: 15px;
+                color: $slackColor;
+                
+                
+
+
+            }
+
+            &--aSlack{
+
+                border:solid 2px $slackColor;
+                margin: 0 auto;
+                width: 90%;
+                margin-bottom: 20px;
+                color: white;
+                background-color: $slackColor;
+
+            }
+
+
+    }
+
+    
+        
+        
+    }
+
+
+    .navbar{
+        display: flex;
+        @include flex(row,flex-start,center,nowrap );
+        background-color: $slackColor;
+        width: 100%;
+        padding-left:30px;
+        padding-right: 30px;
+        
+        
+    }
+
+    .nav__logo{
+        flex: 5;
+        justify-content: flex-start;
+        cursor: pointer;
+        
+        
+        &--h5{
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    .navbar__button{
+        
+        display: block;
+        cursor:pointer;
+        background-color: $slackColor;
+        border:none;
+        
+        
+        
+        
+    
+        &--svg{           
+            border: none;
+            float: right;
+            height: 2rem;
+            width: 2rem;
+            fill: white;
+        }
+
+       
+    }
+
+    .aboveTheFold{
+        padding-top: 100px;
+    }
+
+}
+
+
+
 
 .aboveTheFold{
     width: 100%;
     color: #fff;
     text-align: center;
+    
 
     &__h1{
-        font-size: 50px;
+        font-size: 2.75rem;
         line-height: 50px;
+        padding-left: 10px;
+        padding-right: 15px;
     }
 
     &__accentColor{
@@ -71,22 +329,30 @@ body, html, .root{
     }
 
     &__p{
-
+        font-size: 1rem;
+        padding-left: 10px;
+        padding-right: 15px;
     
 
     }
 
 }
 
+
+
+
 .header__signUp{
     display: block;
     width: 100%;
     margin-bottom: 10px;
     margin-top: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
     
     
     &--a{
         display: block;
+        margin: 0 auto;
         width: 100%;
         border-radius: 5px;
         text-decoration: none;
@@ -101,6 +367,9 @@ body, html, .root{
 
     &--aGoogle{
         background-color: $GoogleColor;
+        
+        
+
     }
 
     &--aEmail{
@@ -115,7 +384,11 @@ body, html, .root{
         color: $slackColor;
         transition: 0.3s;
     }
+
+    
 }
+
+
 
 .header__video{
     width:100%;
@@ -133,6 +406,29 @@ body, html, .root{
     }
 }
 
+@media screen and (min-width:1600px){
+
+    .header__inFront{
+        display: flex;
+        @include flex(row,center,center,nowrap );
+        width: 70%;
+        padding-bottom: 50px;
+        
+    }
+
+    .aboveTheFold__h1{        
+        text-align: left;
+    }
+
+    .aboveTheFold__p{
+        text-align: left;
+    }
+
+
+
+
+}
+
 
 
 // MAIN Section
@@ -148,6 +444,7 @@ body, html, .root{
     @include flex(column,center ,center ,nowrap);
     background-color: $secColor;
     padding-bottom: 40px;
+    
 
 }
 
@@ -187,6 +484,7 @@ body, html, .root{
 .feature{
 
     margin-top: 70px;
+
 
 
     &__dynamism{
@@ -237,6 +535,54 @@ body, html, .root{
 
 
 }
+
+@media screen and (min-width:1600px){
+
+   .feature{
+    display: flex;
+    @include flex(row,space-around, center ,nowrap);
+    width: 70%;
+    margin: 0 auto;
+    padding-left: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    
+    
+
+    &__dynamism{
+    
+        width: 300px;
+        flex: 1;
+
+        &--img{
+
+            width: 300px;
+            
+
+        }
+
+    }
+
+   }
+
+   .feature:nth-child(odd){
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 50px;
+
+}
+
+.feature__content{
+    width: 40%;
+    text-align: left;
+
+    
+}
+
+
+}
+
+
 
 .testimonials{
 
@@ -418,20 +764,33 @@ body, html, .root{
     }
 
     &__a:hover{
-        transform: scale(1.05);
+        // transform: scale(1.05); // Esto para escritorio
         transition: 0.3s;
     }
 
 }
 
+.addFeatures__container{
 
-.addFeatures__caption{
-    width: 290px;
+    display: flex;
+    @include flex(row,center ,center ,nowrap );
+    width: 400%;
+    margin: auto;
+    transition: 0.5s;
+    transform: translateX(-50%);
+
+}
+
+
+.addFeatures__caption{ //grande
+    width: (240%/4);
     background-color: #fff;
     padding-left: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
     color: black;
+
+    
     
     &--p{
         color: rgb(62, 62, 62);
@@ -454,6 +813,8 @@ body, html, .root{
         word-spacing: 1px;
         
         }
+    
+    
         
     }
 
@@ -467,6 +828,7 @@ body, html, .root{
     padding-top: 30px;
     padding-bottom: 30px;
 
+
     &--span::before{
         content: "";
         background-color: #c1bebe;
@@ -477,11 +839,31 @@ body, html, .root{
     
     }
 
+    .span__active{
+        background-color: orange;
+        border-radius: 50%;
+        display: block;
+    }
 }
 
-// .span__selected{
-//     // background-color: $slackColor
-// }
+
+@media screen and (min-width:1600px){
+
+    .addFeatures__container{
+        display: flex;
+        @include flex(row,space-around,center ,nowrap);
+        gap: 30px;
+    }
+
+    .addFeatures__caption{
+        width: 290px;
+    }
+
+
+
+
+}
+
 
 
 .cta{
