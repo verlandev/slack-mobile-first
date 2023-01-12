@@ -13,6 +13,7 @@ html,
 .header {
   width: 100%;
   background-color: #531554;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -45,7 +46,7 @@ html,
 }
 .nav__logo--h5 {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   margin-left: 10px;
 }
 .nav__elements {
@@ -131,126 +132,6 @@ html,
   display: none;
 }
 
-@media screen and (max-width: 1600px) {
-  .header {
-    position: relative;
-    height: 100vh;
-  }
-  .nav {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    background-color: #531554;
-    position: absolute;
-  }
-  .nav__elements {
-    height: 0;
-    overflow: hidden;
-    transition: 0.5s;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 100%;
-    background-color: white;
-  }
-  .nav__elements--ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    width: 100%;
-  }
-  .nav__elements--a {
-    color: black;
-  }
-  .nav .activo {
-    height: 100vh;
-    transition: 0.5s;
-  }
-  .nav__signUpLinks {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-  }
-  .nav__signUpLinks--a {
-    color: black;
-    text-align: center;
-    margin-left: 25px;
-    margin-bottom: 50px;
-  }
-  .nav__signUpLinks--a:hover {
-    text-decoration: none;
-  }
-  .nav__signUpLinks--aNormal {
-    border: solid 2px #531554;
-    margin: 0 auto;
-    width: 90%;
-    margin-bottom: 15px;
-    color: #531554;
-  }
-  .nav__signUpLinks--aNormal:hover {
-    background-color: #531554;
-    color: #fff;
-    border: solid 2px #fff;
-  }
-  .nav__signUpLinks--aSlack {
-    border: solid 2px #531554;
-    margin: 0 auto;
-    width: 90%;
-    margin-bottom: 15px;
-    color: white;
-    background-color: #531554;
-  }
-  .nav__signUpLinks--aSlack:hover {
-    border: solid 2px #531554;
-    background-color: #fff;
-    color: #531554;
-  }
-  .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: nowrap;
-    background-color: #531554;
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .nav__logo {
-    flex: 5;
-    justify-content: flex-start;
-    cursor: pointer;
-  }
-  .nav__logo--h5 {
-    color: white;
-    cursor: pointer;
-  }
-  .navbar__button {
-    display: block;
-    cursor: pointer;
-    background-color: #531554;
-    border: none;
-  }
-  .navbar__button--svg {
-    border: none;
-    float: right;
-    height: 2rem;
-    width: 2rem;
-    fill: white;
-  }
-  .aboveTheFold {
-    padding-top: 100px;
-  }
-}
 .aboveTheFold {
   width: 100%;
   color: #fff;
@@ -291,6 +172,7 @@ html,
   padding: 15px;
   text-transform: uppercase;
   font-weight: 650;
+  font-size: 1rem;
   letter-spacing: 1px;
 }
 .header__signUp--aGoogle {
@@ -326,26 +208,10 @@ html,
 }
 .header__video--demo {
   overflow: hidden;
-  width: 900px;
+  width: 30rem;
+  margin-top: 30px;
 }
 
-@media screen and (min-width: 1600px) {
-  .header__inFront {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 70%;
-    padding-bottom: 50px;
-  }
-  .aboveTheFold__h1 {
-    text-align: left;
-  }
-  .aboveTheFold__p {
-    text-align: left;
-  }
-}
 .main {
   width: 100%;
 }
@@ -361,17 +227,17 @@ html,
 
 .companies {
   padding-top: 30px;
+  width: 100%;
+  border: solid 1px solid red;
 }
-
 .companies__h2 {
   text-align: center;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 1.3em;
   word-spacing: 1px;
   padding-top: 40px;
   padding-bottom: 20px;
 }
-
 .companies__logos {
   display: flex;
   flex-direction: row;
@@ -382,11 +248,11 @@ html,
   margin: auto;
 }
 .companies__logos--img {
-  width: 70px;
+  width: 5em;
   padding-bottom: 20px;
 }
 .companies__logos--newYorkTimes {
-  width: 250px;
+  width: 12em;
 }
 
 .feature {
@@ -421,36 +287,6 @@ html,
   text-decoration: underline;
 }
 
-@media screen and (min-width: 1600px) {
-  .feature {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 70%;
-    margin: 0 auto;
-    padding-left: 50px;
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
-  .feature__dynamism {
-    width: 300px;
-    flex: 1;
-  }
-  .feature__dynamism--img {
-    width: 300px;
-  }
-  .feature:nth-child(odd) {
-    flex-direction: row-reverse;
-    align-items: center;
-    margin-bottom: 50px;
-  }
-  .feature__content {
-    width: 40%;
-    text-align: left;
-  }
-}
 .testimonials {
   background-color: #fff;
   padding-top: 70px;
@@ -664,19 +500,6 @@ html,
   display: block;
 }
 
-@media screen and (min-width: 1600px) {
-  .addFeatures__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 30px;
-  }
-  .addFeatures__caption {
-    width: 290px;
-  }
-}
 .cta {
   width: 100%;
   background-color: #531554;
@@ -832,7 +655,138 @@ html,
   height: 10em;
 }
 
+.footerInf {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  flex-wrap: wrap;
+}
+.footerInf__politics {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footerInf__politics--ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  flex-wrap: wrap;
+  margin-left: -25px;
+}
+.footerInf__politics--li {
+  list-style: none;
+  padding-top: 15px;
+}
+.footerInf__politics--a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.footerInf__politics--a:hover {
+  color: #4370b4;
+  transition: 0.3s;
+}
+.footerInf__rrss {
+  width: 100%;
+  margin-left: -15px;
+}
+.footerInf__rrss--ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.footerInf__rrss--li {
+  list-style: none;
+}
+.footerInf__rrss--img {
+  width: 25px;
+}
+.footerInf__copyright {
+  font-size: 13px;
+  margin-left: 15px;
+}
+
 @media screen and (min-width: 1600px) {
+  .header__inFront {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 70%;
+    padding-bottom: 50px;
+  }
+  .aboveTheFold__h1 {
+    text-align: left;
+  }
+  .aboveTheFold__p {
+    text-align: left;
+  }
+  .feature {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 70%;
+    margin: 0 auto;
+    padding-left: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  .feature__dynamism {
+    width: 300px;
+    flex: 1;
+  }
+  .feature__dynamism--img {
+    width: 300px;
+  }
+  .feature:nth-child(odd) {
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  .feature__content {
+    width: 40%;
+    text-align: left;
+  }
+  .addFeatures__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+  }
+  .addFeatures__caption {
+    width: 290px;
+  }
+  .cta {
+    margin: auto;
+  }
+  .cta__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .cta__buttons--aNormal {
+    width: 250px;
+  }
+  .cta__buttons--aSlack {
+    width: 350px;
+  }
   .footerSupMenu {
     width: 100%;
     display: flex;
@@ -900,64 +854,121 @@ html,
     display: block;
   }
 }
-.footerInf {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: start;
-  flex-wrap: wrap;
-}
-.footerInf__politics {
-  padding-top: 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.footerInf__politics--ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: start;
-  flex-wrap: wrap;
-  margin-left: -25px;
-}
-.footerInf__politics--li {
-  list-style: none;
-  padding-top: 15px;
-}
-.footerInf__politics--a {
-  text-decoration: none;
-  color: black;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.footerInf__politics--a:hover {
-  color: #4370b4;
-  transition: 0.3s;
-}
-.footerInf__rrss {
-  width: 100%;
-  margin-left: -15px;
-}
-.footerInf__rrss--ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.footerInf__rrss--li {
-  list-style: none;
-}
-.footerInf__rrss--img {
-  width: 25px;
-}
-.footerInf__copyright {
-  font-size: 13px;
-  margin-left: 15px;
+@media screen and (max-width: 1600px) {
+  .nav {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: #531554;
+    position: absolute;
+  }
+  .nav__elements {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    background-color: white;
+  }
+  .nav__elements--ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .nav__elements--a {
+    color: black;
+  }
+  .nav .activo {
+    height: 100vh;
+    transition: 0.5s;
+  }
+  .nav__signUpLinks {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .nav__signUpLinks--a {
+    color: black;
+    text-align: center;
+    margin-left: 25px;
+    margin-bottom: 50px;
+  }
+  .nav__signUpLinks--a:hover {
+    text-decoration: none;
+  }
+  .nav__signUpLinks--aNormal {
+    border: solid 2px #531554;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 15px;
+    color: #531554;
+  }
+  .nav__signUpLinks--aNormal:hover {
+    background-color: #531554;
+    color: #fff;
+    border: solid 2px #fff;
+  }
+  .nav__signUpLinks--aSlack {
+    border: solid 2px #531554;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 15px;
+    color: white;
+    background-color: #531554;
+  }
+  .nav__signUpLinks--aSlack:hover {
+    border: solid 2px #531554;
+    background-color: #fff;
+    color: #531554;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: #531554;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .nav__logo {
+    flex: 5;
+    justify-content: flex-start;
+    cursor: pointer;
+  }
+  .nav__logo--h5 {
+    color: white;
+    cursor: pointer;
+  }
+  .navbar__button {
+    display: block;
+    cursor: pointer;
+    background-color: #531554;
+    border: none;
+  }
+  .navbar__button--svg {
+    border: none;
+    float: right;
+    height: 2rem;
+    width: 2rem;
+    fill: white;
+  }
+  .aboveTheFold {
+    padding-top: 100px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
