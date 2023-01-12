@@ -2,7 +2,9 @@
   box-sizing: border-box;
 }
 
-body, html, .root {
+body,
+html,
+.root {
   height: 100%;
   margin: 0;
   font-family: "Open Sans";
@@ -87,13 +89,13 @@ body, html, .root {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.5s;
   text-underline-position: under;
   padding: 15px;
 }
 .nav__signUpLinks--a:hover {
   text-decoration: underline;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .nav__signUpLinks--aNormal {
   border: solid 1px white;
@@ -101,12 +103,15 @@ body, html, .root {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.5s;
   margin-left: 15px;
   margin-right: 15px;
 }
 .nav__signUpLinks--aNormal:hover {
+  background-color: #fff;
   text-decoration: none;
+  color: #531554;
+  transition: 0.5s;
 }
 .nav__signUpLinks--aSlack {
   background-color: #fff;
@@ -129,6 +134,7 @@ body, html, .root {
 @media screen and (max-width: 1600px) {
   .header {
     position: relative;
+    height: 100vh;
   }
   .nav {
     display: flex;
@@ -190,13 +196,23 @@ body, html, .root {
     margin-bottom: 15px;
     color: #531554;
   }
+  .nav__signUpLinks--aNormal:hover {
+    background-color: #531554;
+    color: #fff;
+    border: solid 2px #fff;
+  }
   .nav__signUpLinks--aSlack {
     border: solid 2px #531554;
     margin: 0 auto;
     width: 90%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: white;
     background-color: #531554;
+  }
+  .nav__signUpLinks--aSlack:hover {
+    border: solid 2px #531554;
+    background-color: #fff;
+    color: #531554;
   }
   .navbar {
     display: flex;
@@ -279,17 +295,23 @@ body, html, .root {
 }
 .header__signUp--aGoogle {
   background-color: #4082ed;
+  border: solid 1px #4082ed;
+  transition: 0.5s;
 }
 .header__signUp--aEmail {
   background-color: #fff;
   border: solid 1px #fff;
   color: #531554;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .header__signUp--aEmail:hover {
   border: 1px solid #531554;
   color: #531554;
-  transition: 0.3s;
+  transition: 0.5s;
+}
+.header__signUp--aGoogle:hover {
+  transition: 0.5s;
+  border: solid 1px #531554;
 }
 
 .header__video {
@@ -464,16 +486,24 @@ body, html, .root {
   background-color: #531554;
   color: #fff;
   border: solid 1px #531554;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .testimonials__buttons--aNormal {
   background-color: #fff;
   color: #531554;
   border: solid 1px #531554;
+  transition: 0.5s;
 }
 .testimonials__buttons--aSlack:hover {
-  background-color: #400f40;
-  transition: 0.3s;
+  background-color: #531554;
+  transition: 0.5s;
+  border: solid 1px #fff;
+}
+.testimonials__buttons--aNormal:hover {
+  background-color: #531554;
+  color: #fff;
+  border: solid 1px #fff;
+  transition: 0.5s;
 }
 
 .statistics {
@@ -681,16 +711,26 @@ body, html, .root {
 .cta__buttons--aNormal {
   background-color: #fff;
   border: solid 1.5px #fff;
-  transition: 0.3s;
+  transition: 0.5s;
+  font-weight: bolder;
+  color: #531554;
 }
 .cta__buttons--aSlack {
   background-color: #531554;
   color: #fff;
   border: solid 1px #fff;
+  transition: 0.5s;
+  font-weight: bolder;
 }
 .cta__buttons--aNormal:hover {
   border: solid 1.5px #531554;
-  transition: 0.3s;
+  transition: 0.5s;
+}
+.cta__buttons--aSlack:hover {
+  background-color: white;
+  color: #531554;
+  transition: 0.5s;
+  border: solid 1px #531554;
 }
 
 .footer {
@@ -708,7 +748,7 @@ body, html, .root {
 }
 .footerSup__img {
   width: 70px;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 .footerSup::after {
@@ -722,9 +762,10 @@ body, html, .root {
   right: 4vw;
 }
 
-.footerSup__menu {
+.footerSupMenu {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: start;
   align-items: start;
   flex-wrap: wrap;
@@ -732,35 +773,133 @@ body, html, .root {
   padding-top: 20px;
   padding-bottom: 30px;
 }
-.footerSup__menu--dl {
-  width: 30%;
+.footerSupMenu__accordion {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: start;
   flex-wrap: wrap;
 }
-.footerSup__menu--dt {
+.footerSupMenu__block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+}
+.footerSupMenu__span {
+  padding-left: 5px;
+  padding-right: 10px;
+}
+.footerSupMenu__h5 {
   text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 700;
-  word-spacing: 1px;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 5px;
+  position: relative;
+  padding-left: 20px;
 }
-.footerSup__menu--a {
+.footerSupMenu__h5:hover {
+  transition: 0.3s;
+  color: #4082ed;
+}
+.footerSupMenu__ul {
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  list-style-type: none;
+  width: 100%;
+}
+.footerSupMenu__li {
+  list-style: none;
+  list-style-type: none;
+  padding-left: 20px;
+}
+.footerSupMenu__a {
   text-decoration: none;
-  padding-top: 20px;
-  color: rgb(49, 49, 49);
-  font-size: 14px;
+  color: #000;
+  transition: 0.3s;
 }
-.footerSup__menu--a:hover {
+.footerSupMenu__a:hover {
   color: #4370b4;
-}
-.footerSup__menu--dd {
-  margin-left: 0;
-  font-weight: 400;
+  transition: 0.3s;
 }
 
+.block--active .footerSupMenu__ul {
+  height: 10em;
+}
+
+@media screen and (min-width: 1600px) {
+  .footerSupMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+  .footerSupMenu__accordion {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: left;
+    flex-wrap: wrap;
+  }
+  .footerSupMenu__block {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: start;
+    align-items: left;
+    flex-wrap: wrap;
+    padding-right: 20px;
+  }
+  .footerSupMenu__h5 {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: black;
+  }
+  .footerSupMenu__h5:hover {
+    color: black;
+    cursor: auto;
+  }
+  .footerSupMenu__span {
+    display: none;
+  }
+  .footerSupMenu__ul {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+  }
+  .footerSupMenu__li {
+    width: 100%;
+  }
+  .footerSupMenu__a {
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+  }
+  .footerSupMenu__a:hover {
+    color: #4370b4;
+    transition: 0.3s;
+  }
+  .block--active {
+    display: block;
+  }
+}
 .footerInf {
   display: flex;
   flex-direction: column;

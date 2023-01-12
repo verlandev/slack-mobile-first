@@ -1,1088 +1,1007 @@
-@mixin flex($direction,$content,$align,$wraper){
-    flex-direction: $direction;
-    justify-content: $content;
-    align-items: $align;
-    flex-wrap: $wraper;
+@mixin flex($direction, $content, $align, $wraper) {
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $align;
+  flex-wrap: $wraper;
 }
 
-$slackColor:#531554;
-$secColor:#f4ede3;
+$slackColor: #531554;
+$secColor: #f4ede3;
 $GoogleColor: #4082ed;
-$linkColor:#4370b4;
+$linkColor: #4370b4;
 
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body, html, .root{
-    height: 100%;
-    margin: 0;
-    font-family: 'Open Sans';
+body,
+html,
+.root {
+  height: 100%;
+  margin: 0;
+  font-family: "Open Sans";
 }
 
 // HEADER Section
 
-.header{
+.header {
+  width: 100%;
+  background-color: $slackColor;
+  display: flex;
+  @include flex(column, space-between, center, nowrap);
+}
+
+.header__inFront {
+  width: 90%;
+}
+
+.nav {
+  display: flex;
+  @include flex(row, center, center, nowrap);
+  width: 90%;
+
+  &__logo {
+    display: flex;
+    @include flex(row, center, center, nowrap);
+    width: 10%;
+
+    &--img {
+      width: 40px;
+    }
+
+    &--h5 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-left: 10px;
+    }
+  }
+
+  &__elements {
+    width: 75%;
+    display: flex;
+    @include flex(row, space-around, center, nowrap);
+
+    &--ul {
+      display: flex;
+      @include flex(row, flex-start, center, nowrap);
+      gap: 30px;
+    }
+
+    &--li {
+      list-style: none;
+    }
+
+    &--a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: 0.3s;
+      text-underline-position: under;
+    }
+
+    &--a:hover {
+      text-decoration: underline;
+      transition: 0.3s;
+    }
+  }
+
+  &__signUpLinks {
+    display: flex;
+    @include flex(row, space-between, center, nowrap);
+
+    &--a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.5s;
+      text-underline-position: under;
+      padding: 15px;
+    }
+
+    &--a:hover {
+      text-decoration: underline;
+      transition: 0.5s;
+    }
+
+    &--aNormal {
+      border: solid 1px white;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: 0.5s;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    &--aNormal:hover {
+      background-color: #fff;
+      text-decoration: none;
+      color: $slackColor;
+      transition: 0.5s;
+    }
+
+    &--aSlack {
+      background-color: #fff;
+      border: solid 2px white;
+      border-radius: 5px;
+      color: $slackColor;
+      text-transform: uppercase;
+      transition: 0.5s;
+    }
+
+    &--aSlack:hover {
+      text-decoration: none;
+      border: solid 2px $slackColor;
+      transition: 0.5s;
+    }
+  }
+}
+
+.navbar__button {
+  display: none;
+}
+
+@media screen and (max-width: 1600px) {
+  // Mobile
+
+  .header {
+    position: relative;
+    height: 100vh;
+  }
+
+  .nav {
+    display: flex;
     width: 100%;
+    @include flex(column, space-between, center, nowrap);
     background-color: $slackColor;
-    display: flex;
-    @include flex(column,space-between,center,nowrap);
-    
+    position: absolute;
 
-}
+    &__elements {
+      height: 0;
+      overflow: hidden;
+      transition: 0.5s;
+      @include flex(column, flex-start, center, nowrap);
+      width: 100%;
+      background-color: white;
 
-.header__inFront{
-
-    width: 90%;
-
-}
-
-.nav{
-    display: flex;
-    @include flex(row,center,center,nowrap);
-    width: 90%;
-
-    &__logo{
-
+      &--ul {
         display: flex;
-        @include flex(row,center ,center ,nowrap );
-        width: 10%;
-
-        &--img{
-
-            width: 40px;
-
-        }
-
-        &--h5{
-            color:#fff;
-            font-size: 1.5rem;
-            margin-left: 10px;
-        }
-
-    }
-
-
-    &__elements{
-        width: 75%;
-        display: flex;
-        @include flex(row,space-around,center,nowrap);
-
-        &--ul{
-            display: flex;
-            @include flex(row,flex-start,center,nowrap);
-            gap: 30px;
-            
-        }
-
-        &--li{
-            list-style: none;
-        }
-
-        &--a{
-            text-decoration: none;
-            color: #fff;
-            font-weight: 600;
-            transition: 0.3s;
-            text-underline-position: under
-        }
-
-        &--a:hover{
-            text-decoration: underline;
-            transition: 0.3s;
-
-        }
-
-
-
-    }
-
-    &__signUpLinks{
-
-        display: flex;
-        @include flex(row,space-between,center,nowrap);
-
-        &--a{
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            text-underline-position: under;
-            padding: 15px;
-
-        }
-
-        &--a:hover{
-            text-decoration: underline;
-            transition: 0.3s;
-
-        }
-
-        &--aNormal{
-            border: solid 1px white;
-            border-radius: 5px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: 0.3s;
-            margin-left: 15px;
-            margin-right:15px ;
-
-        }
-
-        &--aNormal:hover{
-
-            text-decoration: none;
-
-        }
-
-        &--aSlack{
-            background-color: #fff;
-            border:solid 2px white;
-            border-radius: 5px;
-            color: $slackColor;
-            text-transform: uppercase;
-            transition: 0.5s;
-        }
-
-        &--aSlack:hover{
-            text-decoration: none;
-            border:solid 2px $slackColor;
-            transition: 0.5s;
-        }
-
-    }
-}
-
-.navbar__button{
-    display: none;
-}
-
-@media screen and (max-width: 1600px){
-      
-
-    .header{
-        position:relative;
-    }
-
-    .nav{
-        display: flex;
+        @include flex(column, space-between, flex-start, nowrap);
         width: 100%;
-        @include flex(column,space-between,center,nowrap);
-        background-color: $slackColor;
-        position: absolute;
-        
-        
+      }
 
-
-        &__elements{
-            height: 0;
-            overflow: hidden;
-            transition: 0.5s;
-            @include flex(column,flex-start,center,nowrap);
-            width: 100%;
-            background-color: white;
-            
-    
-            &--ul{
-                display:flex;
-                @include flex(column,space-between,flex-start,nowrap );
-                width: 100%;
-            }
-    
-            
-    
-            &--a{
-                color:black
-    
-            }           
-            
-        }
-
-
-
-    .activo{
-        height: 100vh;
-        transition:0.5s;
-        
+      &--a {
+        color: black;
+      }
     }
 
-        &__signUpLinks{
-            display: flex;
-            width: 100%;
-            @include flex(column,flex-start,flex-start,nowrap);
-
-
-            &--a{
-                color: black;
-                text-align: center;
-                margin-left: 25px;
-                margin-bottom: 50px;
-            }
-
-            &--a:hover{
-                text-decoration:none;
-            }
-
-            &--aNormal{
-                border:solid 2px $slackColor;
-                margin: 0 auto;
-                width: 90%;
-                margin-bottom: 15px;
-                color: $slackColor;
-                
-                
-
-
-            }
-
-            &--aSlack{
-
-                border:solid 2px $slackColor;
-                margin: 0 auto;
-                width: 90%;
-                margin-bottom: 20px;
-                color: white;
-                background-color: $slackColor;
-
-            }
-
-
+    .activo {
+      height: 100vh;
+      transition: 0.5s;
     }
 
-    
-        
-        
-    }
+    &__signUpLinks {
+      display: flex;
+      width: 100%;
+      @include flex(column, flex-start, flex-start, nowrap);
 
-
-    .navbar{
-        display: flex;
-        @include flex(row,flex-start,center,nowrap );
-        background-color: $slackColor;
-        width: 100%;
-        padding-left:30px;
-        padding-right: 30px;
-        
-        
-    }
-
-    .nav__logo{
-        flex: 5;
-        justify-content: flex-start;
-        cursor: pointer;
-        
-        
-        &--h5{
-            color: white;
-            cursor: pointer;
-        }
-    }
-
-    .navbar__button{
-        
-        display: block;
-        cursor:pointer;
-        background-color: $slackColor;
-        border:none;
-        
-        
-        
-        
-    
-        &--svg{           
-            border: none;
-            float: right;
-            height: 2rem;
-            width: 2rem;
-            fill: white;
-        }
-
-       
-    }
-
-    .aboveTheFold{
-        padding-top: 100px;
-    }
-
-}
-
-
-
-
-.aboveTheFold{
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    
-
-    &__h1{
-        font-size: 2.75rem;
-        line-height: 50px;
-        padding-left: 10px;
-        padding-right: 15px;
-    }
-
-    &__accentColor{
-        color: #e5b43a;
-    }
-
-    &__p{
-        font-size: 1rem;
-        padding-left: 10px;
-        padding-right: 15px;
-    
-
-    }
-
-}
-
-
-
-
-.header__signUp{
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    margin-top: 40px;
-    padding-left: 15px;
-    padding-right: 15px;
-    
-    
-    &--a{
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-        border-radius: 5px;
-        text-decoration: none;
-        color:#fff;
-        margin-bottom: 10px;
+      &--a {
+        color: black;
         text-align: center;
-        padding: 15px;
-        text-transform: uppercase;
-        font-weight: 650;
-        letter-spacing: 1px;
-    }
+        margin-left: 25px;
+        margin-bottom: 50px;
+      }
 
-    &--aGoogle{
-        background-color: $GoogleColor;
-        
-        
+      &--a:hover {
+        text-decoration: none;
+      }
 
-    }
+      &--aNormal {
+        border: solid 2px $slackColor;
+        margin: 0 auto;
+        width: 90%;
+        margin-bottom: 15px;
+        color: $slackColor;
+      }
 
-    &--aEmail{
+      &--aNormal:hover {
+        background-color: $slackColor;
+        color: #fff;
+        border: solid 2px #fff;
+      }
+
+      &--aSlack {
+        border: solid 2px $slackColor;
+        margin: 0 auto;
+        width: 90%;
+        margin-bottom: 15px;
+        color: white;
+        background-color: $slackColor;
+      }
+
+      &--aSlack:hover {
+        border: solid 2px $slackColor;
         background-color: #fff;
-        border: solid 1px #fff;
         color: $slackColor;
-        transition: 0.3s;
+      }
     }
+  }
 
-    &--aEmail:hover{
-        border:1px solid $slackColor;
-        color: $slackColor;
-        transition: 0.3s;
-    }
-
-    
-}
-
-
-
-.header__video{
-    width:100%;
-    margin-top:10px;
+  .navbar {
     display: flex;
-    @include flex (row,center,center,nowrap);
+    @include flex(row, flex-start, center, nowrap);
+    background-color: $slackColor;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .nav__logo {
+    flex: 5;
+    justify-content: flex-start;
+    cursor: pointer;
+
+    &--h5 {
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  .navbar__button {
+    display: block;
+    cursor: pointer;
+    background-color: $slackColor;
+    border: none;
+
+    &--svg {
+      border: none;
+      float: right;
+      height: 2rem;
+      width: 2rem;
+      fill: white;
+    }
+  }
+
+  .aboveTheFold {
+    padding-top: 100px;
+  }
+}
+
+.aboveTheFold {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+
+  &__h1 {
+    font-size: 2.75rem;
+    line-height: 50px;
+    padding-left: 10px;
+    padding-right: 15px;
+  }
+
+  &__accentColor {
+    color: #e5b43a;
+  }
+
+  &__p {
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-right: 15px;
+  }
+}
+
+.header__signUp {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &--a {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: 650;
+    letter-spacing: 1px;
+  }
+
+  &--aGoogle {
+    background-color: $GoogleColor;
+    border: solid 1px $GoogleColor;
+    transition: 0.5s;
+  }
+
+  &--aEmail {
+    background-color: #fff;
+    border: solid 1px #fff;
+    color: $slackColor;
+    transition: 0.5s;
+  }
+
+  &--aEmail:hover {
+    border: 1px solid $slackColor;
+    color: $slackColor;
+    transition: 0.5s;
+  }
+
+  &--aGoogle:hover {
+    transition: 0.5s;
+    border: solid 1px $slackColor;
+  }
+}
+
+.header__video {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  @include flex(row, center, center, nowrap);
+  overflow: hidden;
+
+  &--demo {
     overflow: hidden;
-
-    
-
-    &--demo{
-        overflow: hidden;
-        width: 900px;
-
-    }
+    width: 900px;
+  }
 }
 
-@media screen and (min-width:1600px){
+@media screen and (min-width: 1600px) {
+  .header__inFront {
+    display: flex;
+    @include flex(row, center, center, nowrap);
+    width: 70%;
+    padding-bottom: 50px;
+  }
 
-    .header__inFront{
-        display: flex;
-        @include flex(row,center,center,nowrap );
-        width: 70%;
-        padding-bottom: 50px;
-        
-    }
+  .aboveTheFold__h1 {
+    text-align: left;
+  }
 
-    .aboveTheFold__h1{        
-        text-align: left;
-    }
-
-    .aboveTheFold__p{
-        text-align: left;
-    }
-
-
-
-
+  .aboveTheFold__p {
+    text-align: left;
+  }
 }
-
-
 
 // MAIN Section
 
-
-.main{
-    width: 100%;
-
+.main {
+  width: 100%;
 }
 
-
-.trust{
-    @include flex(column,center ,center ,nowrap);
-    background-color: $secColor;
-    padding-bottom: 40px;
-    
-
+.trust {
+  @include flex(column, center, center, nowrap);
+  background-color: $secColor;
+  padding-bottom: 40px;
 }
 
-.companies{
-   padding-top: 30px;
-
-
+.companies {
+  padding-top: 30px;
 }
 
-.companies__h2{
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 16px;
-    word-spacing: 1px;
-    padding-top: 40px;
+.companies__h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  word-spacing: 1px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.companies__logos {
+  display: flex;
+  @include flex(row, space-around, center, wrap);
+  width: 80%;
+  margin: auto;
+
+  &--img {
+    width: 70px;
     padding-bottom: 20px;
+  }
+
+  &--newYorkTimes {
+    width: 250px;
+  }
 }
 
-.companies__logos{
-    display: flex;
-    @include flex(row,space-around,center,wrap);
-    width: 80%;
-    margin: auto;
+.feature {
+  margin-top: 70px;
 
+  &__dynamism {
     &--img {
-        width: 70px;
-        padding-bottom: 20px;
+      width: 350px;
     }
-
-    &--newYorkTimes{
-        width: 250px;
-    }
-
+  }
 }
 
-
-.feature{
-
-    margin-top: 70px;
-
-
-
-    &__dynamism{
-    
-
-        &--img{
-
-            width: 350px;
-
-        }
-
-    }
+.feature:nth-child(odd) {
+  text-align: end;
 }
 
-.feature:nth-child(odd){
-    text-align: end;
+.feature__content {
+  padding: 15px;
 
+  &--h3 {
+    font-size: 30px;
+  }
+
+  &--p {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+  }
+
+  &--a {
+    color: $linkColor;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  &--a:hover {
+    text-decoration: underline;
+  }
 }
 
-
-
-
-.feature__content{
-    padding: 15px;
-
-    &--h3{
-        font-size: 30px;
-    }
-    
-    
-    &--p{
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 25px;
-    }
-    
-    &--a{
-        color: $linkColor;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 18px;
-
-    }
-
-    &--a:hover{
-        text-decoration: underline;
-    }
-
-
-}
-
-@media screen and (min-width:1600px){
-
-   .feature{
+@media screen and (min-width: 1600px) {
+  .feature {
     display: flex;
-    @include flex(row,space-around, center ,nowrap);
+    @include flex(row, space-around, center, nowrap);
     width: 70%;
     margin: 0 auto;
     padding-left: 50px;
     margin-bottom: 50px;
     margin-top: 50px;
-    
-    
 
-    &__dynamism{
-    
+    &__dynamism {
+      width: 300px;
+      flex: 1;
+
+      &--img {
         width: 300px;
-        flex: 1;
-
-        &--img{
-
-            width: 300px;
-            
-
-        }
-
+      }
     }
+  }
 
-   }
-
-   .feature:nth-child(odd){
+  .feature:nth-child(odd) {
     flex-direction: row-reverse;
     align-items: center;
     margin-bottom: 50px;
+  }
 
-}
-
-.feature__content{
+  .feature__content {
     width: 40%;
     text-align: left;
-
-    
+  }
 }
 
-
-}
-
-
-
-.testimonials{
-
-    background-color: #fff;
-    padding-top: 70px;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    &__h2{
-        
-        font-size: 32px;
-        text-align: center;
-
-    }
-    
-    &__p{
-        text-align: center;
-        font-weight: 500;
-        font-size: 17px;
-    }
-    
-    &__buttons{
-        display: block;
-        padding: 10px;
-        
-
-        &--a{
-            width: 100%;
-            display: block;
-            margin-top: 15px;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            word-spacing: 1px;
-        }
-    
-        &--aSlack{
-            background-color: $slackColor;
-            color: #fff;
-            border:solid 1px $slackColor;
-            transition: 0.3s;
-
-        }
-
-        &--aNormal{
-            background-color: #fff;
-            color: $slackColor;
-            border: solid 1px $slackColor;
-            
-
-        }
-
-        &--aSlack:hover{
-            background-color: #400f40;
-            transition: 0.3s;
-        }
-
-       
-
-    }
-    
-}
-
-.statistics{
-
-    
-    display: flex;
-    @include flex(column,space-around,center,nowrap);
-    margin-top: 60px;
-
-
-    &__block{
-        
-        width: 40%;
-
-        &--p{
-        text-align: center;
-        margin: 10px;
-        font-size: 14px;
-        padding-bottom:10px;
-        }
-    }
-    
-}
-
-
-.percentage{
-    font-size: 60px;
-    color: $slackColor;
-    font-weight: bold;
-}
-
-.testimony{
-
-    width: 100%;
-    
-    
-    &__caption{
-        margin-top: 70px;
-        margin-bottom:70px;
-        
-        &--video{
-            width: 100%;
-            border-radius:0px 150px 150px 0px;
-            margin-left: -15px;
-
-        }
-    }
-
-    &__message{
-        width: 95%;
-        padding-left: 15px;
-        line-height: 30px;
-
-    }
-    
-    &__message--cite{
-        font-size:20px;
-    }
-    
-    
-    &__message--address{
-        padding-top: 20px;
-        font-weight: bolder;
-        font-weight: 400;
-        font-style: normal;
-        line-height:25px;
-        padding-bottom: 10px;
-
-    }
-    
-    
-    &__message--a{
-        color: $linkColor;
-        text-decoration: none;
-        font-weight: 500;
-        font-size:17px;
-        
-    }
-
-    
-
-    &__caution{
-
-        width: 90%;
-        padding-top: 60px;
-        padding-bottom: 10px;
-
-        &--p{
-            text-align: center;
-            color: #6c6c6c;
-            font-size: 14px;
-        }
-    }
-}
-
-
-.addFeatures{
-    background-color: $secColor;
-    padding-top: 40px;
-    display: flex;
-    @include flex(column,center,center,nowrap);
-
-    &__h2{
-        text-align: center;
-        width: 90%;
-    }
-
-    &__a{
-        text-decoration: none;
-        display: flex;
-        @include flex(column,center,center,wrap);
-        width: 50%;
-        transition: 0.3s;
-        
-    }
-
-    &__a:hover{
-        // transform: scale(1.05); // Esto para escritorio
-        transition: 0.3s;
-    }
-
-}
-
-.addFeatures__container{
-
-    display: flex;
-    @include flex(row,center ,center ,nowrap );
-    width: 400%;
-    margin: auto;
-    transition: 0.5s;
-    transform: translateX(-50%);
-
-}
-
-
-.addFeatures__caption{ //grande
-    width: (240%/4);
-    background-color: #fff;
-    padding-left: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    color: black;
-
-    
-    
-    &--p{
-        color: rgb(62, 62, 62);
-        font-weight: 500;
-        font-size: 15px;
-    }
-    
-    &--h3{
-        font-size: 22px;
-        color: black;
-        padding-right: 15px;
-    }
-    
-    &--link{
-       
-        color: $linkColor;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 500;
-        word-spacing: 1px;
-        
-        }
-    
-    
-        
-    }
-
-
-
-
-.addFeatures__carrusel{
-    display: flex;
-    @include flex(row,space-around,center,nowrap);
-    width: 30%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-
-
-    &--span::before{
-        content: "";
-        background-color: #c1bebe;
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        display: block;
-    
-    }
-
-    .span__active{
-        background-color: orange;
-        border-radius: 50%;
-        display: block;
-    }
-}
-
-
-@media screen and (min-width:1600px){
-
-    .addFeatures__container{
-        display: flex;
-        @include flex(row,space-around,center ,nowrap);
-        gap: 30px;
-    }
-
-    .addFeatures__caption{
-        width: 290px;
-    }
-
-
-
-
-}
-
-
-
-.cta{
-    width: 100%;
-    background-color: $slackColor;
-    height: 500px;
-    padding-top: 70px;
-    clip-path: ellipse(100% 80% at center top);
-    
-
-    &__h2{
-        color: #fff;
-        margin-top: 0;
-        font-size: 30px;
-        text-align: center;
-        padding-bottom: 20px;
-
-    }
-    
-    &__buttons{
-        display: block;
-        width: 95%;
-        margin-left: 15px;
-        
-        
-        
-        
-
-        &--a{
-            display: block;
-            margin-top: 15px;
-            width: 100%;
-            padding: 15px;
-            display: block;
-            text-transform: uppercase;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 500;
-            border-radius:5px;            
-            
-    }
-
-        &--aNormal{
-            background-color: #fff;
-            border: solid 1.5px #fff;
-            transition: 0.3s;
-
-    }
-
-        &--aSlack{
-            background-color: $slackColor;
-            color: #fff;
-            border: solid 1px #fff;
-    }
-
-    &--aNormal:hover{
-        border: solid 1.5px $slackColor;
-        transition: 0.3s;
-    }
-    
-}    
-
-}
-
-.footer{
-    width: 100%;
-    display: flex;
-    @include flex(column,space-around,start,wrap);
-    
-}
-
-
-.footerSup{
-    width: 100%;
-    position: relative;
-    
-    
-       
-
-        &__img{
-        width: 70px;
-        padding-left: 10px;
-        }
-}
-
-.footerSup::after{
+.testimonials {
+  background-color: #fff;
+  padding-top: 70px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &__h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  &__p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 17px;
+  }
+
+  &__buttons {
     display: block;
-    content: "";
-    height: 2px;
-    width: 90%;
-    position: absolute;
-    background-color: #ebeaeb;
-    left: 4vw;
-    right: 4vw;
+    padding: 10px;
 
+    &--a {
+      width: 100%;
+      display: block;
+      margin-top: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      word-spacing: 1px;
+    }
+
+    &--aSlack {
+      background-color: $slackColor;
+      color: #fff;
+      border: solid 1px $slackColor;
+      transition: 0.5s;
+    }
+
+    &--aNormal {
+      background-color: #fff;
+      color: $slackColor;
+      border: solid 1px $slackColor;
+      transition: 0.5s;
+    }
+
+    &--aSlack:hover {
+      background-color: $slackColor;
+      transition: 0.5s;
+      border: solid 1px #fff;
+    }
+
+    &--aNormal:hover {
+      background-color: $slackColor;
+      color: #fff;
+      border: solid 1px #fff;
+      transition: 0.5s;
+    }
+  }
 }
 
-.footerSup__menu{
+.statistics {
+  display: flex;
+  @include flex(column, space-around, center, nowrap);
+  margin-top: 60px;
+
+  &__block {
+    width: 40%;
+
+    &--p {
+      text-align: center;
+      margin: 10px;
+      font-size: 14px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.percentage {
+  font-size: 60px;
+  color: $slackColor;
+  font-weight: bold;
+}
+
+.testimony {
+  width: 100%;
+
+  &__caption {
+    margin-top: 70px;
+    margin-bottom: 70px;
+
+    &--video {
+      width: 100%;
+      border-radius: 0px 150px 150px 0px;
+      margin-left: -15px;
+    }
+  }
+
+  &__message {
+    width: 95%;
+    padding-left: 15px;
+    line-height: 30px;
+  }
+
+  &__message--cite {
+    font-size: 20px;
+  }
+
+  &__message--address {
+    padding-top: 20px;
+    font-weight: bolder;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 25px;
+    padding-bottom: 10px;
+  }
+
+  &__message--a {
+    color: $linkColor;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+  }
+
+  &__caution {
+    width: 90%;
+    padding-top: 60px;
+    padding-bottom: 10px;
+
+    &--p {
+      text-align: center;
+      color: #6c6c6c;
+      font-size: 14px;
+    }
+  }
+}
+
+.addFeatures {
+  background-color: $secColor;
+  padding-top: 40px;
+  display: flex;
+  @include flex(column, center, center, nowrap);
+
+  &__h2 {
+    text-align: center;
+    width: 90%;
+  }
+
+  &__a {
+    text-decoration: none;
     display: flex;
-    @include flex(row,start,start, wrap);
+    @include flex(column, center, center, wrap);
+    width: 50%;
+    transition: 0.3s;
+  }
+
+  &__a:hover {
+    // transform: scale(1.05); // Esto para escritorio
+    transition: 0.3s;
+  }
+}
+
+.addFeatures__container {
+  display: flex;
+  @include flex(row, center, center, nowrap);
+  width: 400%;
+  margin: auto;
+  transition: 0.5s;
+  transform: translateX(-50%);
+}
+
+.addFeatures__caption {
+  //grande
+  width: (240%/4);
+  background-color: #fff;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: black;
+
+  &--p {
+    color: rgb(62, 62, 62);
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  &--h3 {
+    font-size: 22px;
+    color: black;
+    padding-right: 15px;
+  }
+
+  &--link {
+    color: $linkColor;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    word-spacing: 1px;
+  }
+}
+
+.addFeatures__carrusel {
+  display: flex;
+  @include flex(row, space-around, center, nowrap);
+  width: 30%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &--span::before {
+    content: "";
+    background-color: #c1bebe;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+  }
+
+  .span__active {
+    background-color: orange;
+    border-radius: 50%;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .addFeatures__container {
+    display: flex;
+    @include flex(row, space-around, center, nowrap);
+    gap: 30px;
+  }
+
+  .addFeatures__caption {
+    width: 290px;
+  }
+}
+
+.cta {
+  width: 100%;
+  background-color: $slackColor;
+  height: 500px;
+  padding-top: 70px;
+  clip-path: ellipse(100% 80% at center top);
+
+  &__h2 {
+    color: #fff;
+    margin-top: 0;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  &__buttons {
+    display: block;
+    width: 95%;
+    margin-left: 15px;
+
+    &--a {
+      display: block;
+      margin-top: 15px;
+      width: 100%;
+      padding: 15px;
+      display: block;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 5px;
+    }
+
+    &--aNormal {
+      background-color: #fff;
+      border: solid 1.5px #fff;
+      transition: 0.5s;
+      font-weight: bolder;
+      color: $slackColor;
+    }
+
+    &--aSlack {
+      background-color: $slackColor;
+      color: #fff;
+      border: solid 1px #fff;
+      transition: 0.5s;
+      font-weight: bolder;
+    }
+
+    &--aNormal:hover {
+      border: solid 1.5px $slackColor;
+      transition: 0.5s;
+    }
+
+    &--aSlack:hover {
+      background-color: white;
+      color: $slackColor;
+      transition: 0.5s;
+      border: solid 1px $slackColor;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  @include flex(column, space-around, start, wrap);
+}
+
+.footerSup {
+  width: 100%;
+  position: relative;
+
+  &__img {
+    width: 70px;
+    padding-left: 20px;
+  }
+}
+
+.footerSup::after {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 90%;
+  position: absolute;
+  background-color: #ebeaeb;
+  left: 4vw;
+  right: 4vw;
+}
+
+.footerSupMenu {
+  width: 100%;
+  display: flex;
+  @include flex(column, start, start, wrap);
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  &__accordion {
+    width: 100%;
+    display: flex;
+    @include flex(column, start, start, wrap);
+  }
+  &__block {
+    width: 100%;
+    display: flex;
+    @include flex(column, start, start, wrap);
+  }
+
+  &__span {
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  &__h5 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 5px;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  &__h5:hover {
+    transition: 0.3s;
+    color: #4082ed;
+  }
+
+  &__ul {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    list-style-type: none;
+    width: 100%;
+  }
+
+  &__li {
+    list-style: none;
+    list-style-type: none;
+    padding-left: 20px;
+  }
+
+  &__a {
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+  }
+
+  &__a:hover {
+    color: $linkColor;
+    transition: 0.3s;
+  }
+}
+
+.block--active .footerSupMenu__ul {
+  height: 10em;
+}
+
+@media screen and (min-width: 1600px) {
+  // versión escritorio
+
+  .footerSupMenu {
+    width: 100%;
+    display: flex;
+    @include flex(row, start, start, wrap);
     padding-left: 10px;
     padding-top: 20px;
     padding-bottom: 30px;
 
-
-    &--dl{
-
-        width: 30%;
-        display: flex;
-        @include flex(column,flex-start,start,wrap);
+    &__accordion {
+      width: 100%;
+      display: flex;
+      @include flex(row, start, left, wrap);
+    }
+    &__block {
+      display: flex;
+      width: 30%;
+      @include flex(column, start, left, wrap);
+      padding-right: 20px;
+    }
+    &__h5 {
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 1rem;
+      color: black;
     }
 
-    &--dt{
-        text-transform: uppercase;
-        font-size: 15px;
-        font-weight: 700;
-        word-spacing: 1px;
-        margin-bottom: 10px;
-    }    
-
-    &--a{
-        text-decoration: none;
-        padding-top: 20px;
-        color: rgb(49, 49, 49);
-        font-size: 14px;
+    &__h5:hover {
+      color: black;
+      cursor: auto;
     }
 
-    &--a:hover{
-        color: $linkColor;
-    }
-    
-    &--dd{
-        margin-left: 0;
-        font-weight: 400;
-            
-}    
-
-}    
-
-.footerInf{
-
-    display: flex;
-    @include flex(column,flex-start,start,wrap);
-
-
-    &__politics{
-    
-        padding-top: 20px;
-        width: 100%;
-        display: flex;
-        @include flex (row, space-between,center,wrap);
-
-        &--ul{
-            display: flex;
-            @include flex(column, space-around,start,wrap);
-            margin-left: -25px;
-        }
-        
-        &--li{
-            list-style: none;
-            padding-top: 15px;
-            
-            
-        }
-        
-        &--a{
-            text-decoration: none;
-            color: black;
-            font-weight: 600;
-            transition: 0.3s;
-            
-        }
-
-        &--a:hover{
-            color:$linkColor;
-            transition: 0.3s;
-        }
-    }
-    
-
-
-    &__rrss{
-        
-        width: 100%;
-        margin-left:-15px;
-
-        &--ul{
-
-            display: flex;
-            @include flex(row,space-between, center,nowrap);
-        
-    }
-    
-        &--li{
-            list-style: none;
-    }
-    
-        &--a{
-        
+    &__span {
+      display: none;
     }
 
-    
-        &--img{
-            width: 25px;
+    &__ul {
+      height: auto;
+      display: flex;
+      @include flex(column, center, left, wrap);
+      list-style-type: none;
+      padding: 0;
+    }
+    &__li {
+      // list-style: none;
+      width: 100%;
     }
 
-
-    
-
-
-
-} 
-
-    &__copyright{
-        font-size: 13px;
-        margin-left: 15px;
+    &__a {
+      text-decoration: none;
+      color: #000;
+      transition: 0.3s;
     }
 
+    &__a:hover {
+      color: $linkColor;
+      transition: 0.3s;
+    }
+  }
+
+  .block--active {
+    display: block;
+  }
 }
 
+.footerInf {
+  display: flex;
+  @include flex(column, flex-start, start, wrap);
 
+  &__politics {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    @include flex(row, space-between, center, wrap);
 
+    &--ul {
+      display: flex;
+      @include flex(column, space-around, start, wrap);
+      margin-left: -25px;
+    }
+
+    &--li {
+      list-style: none;
+      padding-top: 15px;
+    }
+
+    &--a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    &--a:hover {
+      color: $linkColor;
+      transition: 0.3s;
+    }
+  }
+
+  &__rrss {
+    width: 100%;
+    margin-left: -15px;
+
+    &--ul {
+      display: flex;
+      @include flex(row, space-between, center, nowrap);
+    }
+
+    &--li {
+      list-style: none;
+    }
+
+    &--a {
+    }
+
+    &--img {
+      width: 25px;
+    }
+  }
+
+  &__copyright {
+    font-size: 13px;
+    margin-left: 15px;
+  }
+}
