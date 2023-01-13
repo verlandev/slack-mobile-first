@@ -252,7 +252,7 @@ html,
 .companies {
   padding-top: 30px;
   width: 100%;
-  border: solid 1px solid red;
+
   
   &__h2 {
     text-align: center;
@@ -261,6 +261,9 @@ html,
     word-spacing: 1px;
     padding-top: 40px;
     padding-bottom: 20px;
+    width:80%;
+    margin: auto;
+    margin-bottom: 2em;
   }
   
   &__logos {
@@ -298,12 +301,12 @@ html,
   padding: 15px;
   
   &--h3 {
-    font-size: 30px;
+    font-size: 2em;
   }
   
   &--p {
     font-weight: 500;
-    font-size: 17px;
+    font-size: 1em;
     line-height: 25px;
   }
   
@@ -311,7 +314,7 @@ html,
     color: $linkColor;
     text-decoration: none;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1em;
   }
   
   &--a:hover {
@@ -326,14 +329,14 @@ html,
   padding-right: 15px;
   
   &__h2 {
-    font-size: 32px;
+    font-size: 2em;
     text-align: center;
   }
   
   &__p {
     text-align: center;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 1em;
   }
   
   &__buttons {
@@ -351,6 +354,7 @@ html,
       text-decoration: none;
       font-weight: 600;
       word-spacing: 1px;
+      font-size: 1em;
     }
     
     &--aSlack {
@@ -393,7 +397,7 @@ html,
     &--p {
       text-align: center;
       margin: 10px;
-      font-size: 14px;
+      font-size: 0.9em;
       padding-bottom: 10px;
     }
   }
@@ -414,24 +418,23 @@ html,
     
     &--video {
       width: 100%;
-      border-radius: 0px 150px 150px 0px;
-      margin-left: -15px;
+      border-radius: 0px 70em 70em 0px;
+      margin-left: -0.5em;
     }
   }
   
   &__message {
     width: 95%;
     padding-left: 15px;
-    line-height: 30px;
+    line-height: 1.5em;
   }
   
   &__message--cite {
-    font-size: 20px;
+    font-size: 1.2em;
   }
   
   &__message--address {
     padding-top: 20px;
-    font-weight: bolder;
     font-weight: 400;
     font-style: normal;
     line-height: 25px;
@@ -442,7 +445,7 @@ html,
     color: $linkColor;
     text-decoration: none;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 1em;
   }
   
   &__caution {
@@ -453,7 +456,7 @@ html,
     &--p {
       text-align: center;
       color: #6c6c6c;
-      font-size: 14px;
+      font-size: 0.8em;
     }
   }
 }
@@ -473,7 +476,6 @@ html,
     text-decoration: none;
     display: flex;
     @include flex(column, center, center, wrap);
-    width: 50%;
     transition: 0.3s;
   }
   
@@ -486,29 +488,34 @@ html,
 .addFeatures__container {
   display: flex;
   @include flex(row, center, center, nowrap);
-  width: 400%;
+  width: 100%;
   margin: auto;
   transition: 0.5s;
-  transform: translateX(-50%);
+}
+
+.inactive{
+  display: none;
 }
 
 .addFeatures__caption {
   //grande
-  width: (240%/4);
+  
   background-color: #fff;
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  width: 22em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 2em;
   color: black;
   
   &--p {
     color: rgb(62, 62, 62);
     font-weight: 500;
-    font-size: 15px;
+    font-size: 1em;
   }
   
   &--h3 {
-    font-size: 22px;
+    font-size: 1.3em;
     color: black;
     padding-right: 15px;
   }
@@ -519,6 +526,10 @@ html,
     text-transform: uppercase;
     font-weight: 500;
     word-spacing: 1px;
+  }
+
+  &--img{
+    width: 20em;
   }
 }
 
@@ -767,7 +778,7 @@ html,
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1600px) { // escritorio
   
   .header__inFront {
     display: flex;
@@ -813,6 +824,39 @@ html,
     width: 40%;
     text-align: left;
   }
+
+.testimonials__buttons{
+    width: 50em;
+    margin:auto;
+    display: flex;
+    @include flex(row,center,center,wrap);
+    gap: 0.5em;
+
+    &--aSlack{
+      width: 20em;
+    }
+    &--aNormal{
+      width: 20em;
+    }
+  }
+
+  .statistics{
+    width: 80%;
+    margin:auto;
+    margin-top: 4em;
+    display: flex;
+    @include flex(row,space-around,center, wrap);
+
+    &__block{
+      width: 20%;
+    }
+
+    &__p{
+      width: 10%;
+      border:solid 1px blue;
+    }
+
+  }
   
   .addFeatures__container {
     display: flex;
@@ -821,8 +865,15 @@ html,
   }
   
   .addFeatures__caption {
-    width: 290px;
+    width: 22em;
+
+    &--img{
+      width: 20em;
+    }
+
   }
+
+
   
   .cta {
     
@@ -906,6 +957,7 @@ html,
   .block--active {
     display: block;
   }
+
 }
 
 @media screen and (max-width: 1600px) { // mobile
@@ -940,7 +992,7 @@ html,
     }
 
     .activo {
-      height: 100vh;
+      height: 50em;
       transition: 0.5s;
     }
 

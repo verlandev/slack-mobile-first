@@ -228,7 +228,6 @@ html,
 .companies {
   padding-top: 30px;
   width: 100%;
-  border: solid 1px solid red;
 }
 .companies__h2 {
   text-align: center;
@@ -237,6 +236,9 @@ html,
   word-spacing: 1px;
   padding-top: 40px;
   padding-bottom: 20px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 2em;
 }
 .companies__logos {
   display: flex;
@@ -270,18 +272,18 @@ html,
   padding: 15px;
 }
 .feature__content--h3 {
-  font-size: 30px;
+  font-size: 2em;
 }
 .feature__content--p {
   font-weight: 500;
-  font-size: 17px;
+  font-size: 1em;
   line-height: 25px;
 }
 .feature__content--a {
   color: #4370b4;
   text-decoration: none;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1em;
 }
 .feature__content--a:hover {
   text-decoration: underline;
@@ -294,13 +296,13 @@ html,
   padding-right: 15px;
 }
 .testimonials__h2 {
-  font-size: 32px;
+  font-size: 2em;
   text-align: center;
 }
 .testimonials__p {
   text-align: center;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 1em;
 }
 .testimonials__buttons {
   display: block;
@@ -317,6 +319,7 @@ html,
   text-decoration: none;
   font-weight: 600;
   word-spacing: 1px;
+  font-size: 1em;
 }
 .testimonials__buttons--aSlack {
   background-color: #531554;
@@ -356,7 +359,7 @@ html,
 .statistics__block--p {
   text-align: center;
   margin: 10px;
-  font-size: 14px;
+  font-size: 0.9em;
   padding-bottom: 10px;
 }
 
@@ -375,20 +378,19 @@ html,
 }
 .testimony__caption--video {
   width: 100%;
-  border-radius: 0px 150px 150px 0px;
-  margin-left: -15px;
+  border-radius: 0px 70em 70em 0px;
+  margin-left: -0.5em;
 }
 .testimony__message {
   width: 95%;
   padding-left: 15px;
-  line-height: 30px;
+  line-height: 1.5em;
 }
 .testimony__message--cite {
-  font-size: 20px;
+  font-size: 1.2em;
 }
 .testimony__message--address {
   padding-top: 20px;
-  font-weight: bolder;
   font-weight: 400;
   font-style: normal;
   line-height: 25px;
@@ -398,7 +400,7 @@ html,
   color: #4370b4;
   text-decoration: none;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 1em;
 }
 .testimony__caution {
   width: 90%;
@@ -408,7 +410,7 @@ html,
 .testimony__caution--p {
   text-align: center;
   color: #6c6c6c;
-  font-size: 14px;
+  font-size: 0.8em;
 }
 
 .addFeatures {
@@ -431,7 +433,6 @@ html,
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 50%;
   transition: 0.3s;
 }
 .addFeatures__a:hover {
@@ -444,27 +445,31 @@ html,
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  width: 400%;
+  width: 100%;
   margin: auto;
   transition: 0.5s;
-  transform: translateX(-50%);
+}
+
+.inactive {
+  display: none;
 }
 
 .addFeatures__caption {
-  width: 60%;
   background-color: #fff;
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  width: 22em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 2em;
   color: black;
 }
 .addFeatures__caption--p {
   color: rgb(62, 62, 62);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 1em;
 }
 .addFeatures__caption--h3 {
-  font-size: 22px;
+  font-size: 1.3em;
   color: black;
   padding-right: 15px;
 }
@@ -474,6 +479,9 @@ html,
   text-transform: uppercase;
   font-weight: 500;
   word-spacing: 1px;
+}
+.addFeatures__caption--img {
+  width: 20em;
 }
 
 .addFeatures__carrusel {
@@ -759,6 +767,39 @@ html,
     width: 40%;
     text-align: left;
   }
+  .testimonials__buttons {
+    width: 50em;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+  .testimonials__buttons--aSlack {
+    width: 20em;
+  }
+  .testimonials__buttons--aNormal {
+    width: 20em;
+  }
+  .statistics {
+    width: 80%;
+    margin: auto;
+    margin-top: 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .statistics__block {
+    width: 20%;
+  }
+  .statistics__p {
+    width: 10%;
+    border: solid 1px blue;
+  }
   .addFeatures__container {
     display: flex;
     flex-direction: row;
@@ -768,7 +809,10 @@ html,
     gap: 30px;
   }
   .addFeatures__caption {
-    width: 290px;
+    width: 22em;
+  }
+  .addFeatures__caption--img {
+    width: 20em;
   }
   .cta {
     margin: auto;
@@ -888,7 +932,7 @@ html,
     color: black;
   }
   .nav .activo {
-    height: 100vh;
+    height: 50em;
     transition: 0.5s;
   }
   .nav__signUpLinks {
